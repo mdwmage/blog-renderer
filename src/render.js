@@ -3,13 +3,14 @@
 //blog list
 const bloglist = ['blog/ExampleOne.html', 'blog/ExampleTwo.html', 'blog/ExampleThree.html'];
 //reads blog posts and stores them in variable
-async function getBlogPost(url) {
+async function getBlogPost(url, _callback) {
 	// fetches blog post
 	const response = await fetch(url);
 	// stores in variable
 	var post = await response.text();	
 	// renders post on website
 	show(post);
+	_callback();
 }
 
 //renders html
@@ -28,8 +29,9 @@ function writeBlog () {
 	// loops for number of blog posts
 	for (let step = 0; step < bloglist.length; step++) {
 		// Writes blog posts from list
-		getBlogPost(bloglist[step]);
-		console.log("post", step, "rendered")
+		getBlogPost(bloglist[step], ()=>{
+			console.log("Blog", step, "rendered");
+		});
 	  }  
 }
 
