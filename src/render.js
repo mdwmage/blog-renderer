@@ -1,0 +1,36 @@
+// Blog Rendering Tool
+
+//blog list
+const bloglist = ['blog/ExampleOne.html', 'blog/ExampleTwo.html', 'blog/ExampleThree.html'];
+//reads blog posts and stores them in variable
+async function getBlogPost(url) {
+	// fetches blog post
+	const response = await fetch(url);
+	// stores in variable
+	var post = await response.text();	
+	// renders post on website
+	show(post);
+}
+
+//renders html
+function show(data) {
+	// makes a div for the blog post
+	var post = document.createElement('div');
+	post.className = "textblock";
+	// adds div to parent
+	document.getElementById('blogger').appendChild(post);
+	// writes blog text to div
+	post.innerHTML = data;
+}
+
+//renders blog
+function writeBlog () {
+	// loops for number of blog posts
+	for (let step = 0; step < bloglist.length; step++) {
+		// Writes blog posts from list
+		getBlogPost(bloglist[step]);
+		console.log("post", step, "rendered")
+	  }  
+}
+
+writeBlog(bloglist);

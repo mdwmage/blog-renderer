@@ -1,0 +1,14 @@
+a {
+    color: #C9CBFF;
+    transition-duration: 0.5s;
+  }
+  a:visited {
+    color: #C9CBFF;
+  }
+  a:hover {
+    color: #DDB6F2;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
