@@ -28,7 +28,8 @@ body {
 	margin-bottom: 10px;
 }
 .textblock {
-	margin: 5px;
+	margin: auto;
+	width: 50%;
 	padding: 10px;
 	transition: 0.5s;
 	flex: 1;
