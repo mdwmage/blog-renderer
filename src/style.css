@@ -29,6 +29,8 @@ body {
 }
 .textblock {
 	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	width: 50%;
 	padding: 10px;
 	transition: 0.5s;
