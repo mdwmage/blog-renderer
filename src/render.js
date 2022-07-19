@@ -30,7 +30,7 @@ function writeBlog () {
 	for (let step = 0; step < bloglist.length; step++) {
 		// Writes blog posts from list
 		getBlogPost(bloglist[step], ()=>{
-			console.log("Blog", step, "rendered");
+			setTimeout(() => { console.log("Blog", step, "rendered"); }, 50);
 		});
 	  }  
 }
