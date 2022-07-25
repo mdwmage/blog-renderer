@@ -1,14 +1,27 @@
 a {
-    color: #C9CBFF;
-    transition-duration: 0.5s;
-  }
-  a:visited {
-    color: #C9CBFF;
-  }
-  a:hover {
-    color: #DDB6F2;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  
+	color: var(--bg-secondary);
+}
+
+a:visited {
+	color: var(--bg-secondary);
+}
+
+a:hover {
+	color: var(--color-block);
+}
+
+.blogblock a {
+	color: var(--bg-hover);
+}
+
+.blogblock a:visited {
+	color: var(--bg-hover);
+}
+
+.floatblock a {
+	color: var(--bg-hover);
+}
+
+.floatblock a:visited {
+	color: var(--bg-hover);
+}

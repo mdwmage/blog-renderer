@@ -17,7 +17,7 @@ async function getBlogPost(url, _callback) {
 function show(data) {
 	// makes a div for the blog post
 	var post = document.createElement('div');
-	post.className = "textblock";
+	post.className = "blogblock";
 	// adds div to parent
 	document.getElementById('blogger').appendChild(post);
 	// writes blog text to div

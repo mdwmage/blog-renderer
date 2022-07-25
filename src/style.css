@@ -12,7 +12,9 @@ html, body {
 	--bg-secondary: #cdd6f4;
 	--bg-hover: #1E1E2E;
 	--title-bg: #89DCEB;
+	--colour-block: #cba6f7;
 }
+
 .maintext {
 	font-family: "Fira Code";
 	font-size: 16px;
@@ -23,7 +25,7 @@ html, body {
 }
 body {
 	text-align: center;
-	background-color: var(--bg-secondary);
+	background-color: var(--bg-colour);
  	color: var(--text-colour);
 	margin-bottom: 10px;
 }
@@ -39,6 +41,43 @@ body {
 	background-color: var(--bg-colour);
 	border-radius: 2px;
 }
+
+.blogblock {
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 60%;
+	padding: 10px;
+	transition: 0.5s;
+	flex: 1;
+	flex-grow: 3;
+	background-color: var(--colour-block);
+	color: var(--bg-colour);
+	border-radius: 2px;
+}
+
+.blogblock a {
+	color: var(--bg-hover);
+}
+
+.blogblock a:visited {
+	color: var(--bg-hover);
+}
+
+.floatblock {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+	z-index: 10;
+	width: 60%;
+	padding: 10px;
+	transition: 0.5s;
+	background-color: var(--colour-block);
+	color: var(--bg-colour);
+	border-radius: 2px;
+}
+
 .blanktextblock {
 	flex: 1;
 	flex-grow: 4;
