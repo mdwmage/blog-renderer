@@ -36,4 +36,4 @@ function writeBlog () {
 }
 
 
-writeBlog(bloglist)
+writeBlog(bloglist);
