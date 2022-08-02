@@ -35,3 +35,5 @@ function writeBlog () {
 	  }  
 }
 
+
+writeBlog(bloglist)
