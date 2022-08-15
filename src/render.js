@@ -1,39 +1,35 @@
 // Blog Rendering Tool
 
-//blog list
+// blog posts
 const bloglist = ['blog/ExampleOne.html', 'blog/ExampleTwo.html', 'blog/ExampleThree.html'];
-//reads blog posts and stores them in variable
-async function getBlogPost(url, _callback) {
-	// fetches blog post
-	const response = await fetch(url);
-	// stores in variable
-	var post = await response.text();	
-	// renders post on website
-	show(post);
-	_callback();
+// position in blog post list
+var progress = 0;
+//render a block of 4 blog posts
+function renderBlock() {
+	// stop on 4 or end of blog list
+	for(let i = 0; i <= 3 && progress <= bloglist.length - 1; i++) {
+		// create blog post holder with embeded script to render post
+		console.log(progress)
+		let div = document.createElement('div');
+		let scr = document.createElement('script')
+		div.className = 'rollOut';
+		div.id = progress
+		scr.innerHTML = `
+		fetch('` + bloglist[progress] + `').then(data => {
+			data.text().then(text => {
+				document.getElementById(` + progress + `).innerHTML = text
+			}) 
+		}) 
+		`;
+		div.appendChild(scr);
+		document.getElementById('blogger').appendChild(div);
+		progress++
+	}
 }
-
-//renders html
-function show(data) {
-	// makes a div for the blog post
-	var post = document.createElement('div');
-	post.className = "blogblock";
-	// adds div to parent
-	document.getElementById('blogger').appendChild(post);
-	// writes blog text to div
-	post.innerHTML = data;
-}
-
-//renders blog
-function writeBlog () {
-	// loops for number of blog posts
-	for (let step = 0; step < bloglist.length; step++) {
-		// Writes blog posts from list
-		getBlogPost(bloglist[step], ()=>{
-			setTimeout(() => { console.log("Blog", step, "rendered"); }, 50);
-		});
-	  }  
-}
-
-
-writeBlog(bloglist);
+renderBlock()
+// triggered when footer visible
+document.addEventListener('scroll', () => {
+	if(document.getElementById('bottom').offsetParent != null) {
+		renderBlock()
+	}
+})
